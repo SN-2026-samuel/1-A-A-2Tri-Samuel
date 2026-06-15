@@ -372,12 +372,12 @@
 
     /* ── API Supabase ───────────────────────────── */
     const HEADERS = {
-      'apikey': eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im92ZW91d3J0ZXpoZG51cnZjZ3ZhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA4ODY2MDEsImV4cCI6MjA5NjQ2MjYwMX0.PvDuWwvrZ62JGylQdeEx38ZLW_LtAGskQQ_euO5IFxU,
-      'Authorization': `Bearer ${eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im92ZW91d3J0ZXpoZG51cnZjZ3ZhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA4ODY2MDEsImV4cCI6MjA5NjQ2MjYwMX0.PvDuWwvrZ62JGylQdeEx38ZLW_LtAGskQQ_euO5IFxU}`,
+      'apikey': SUPABASE_ANON_KEY,
+      'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
     };
 
     async function sbFetch(path) {
-      const r = await fetch(`${"https://oveouwrtezhdnurvcgva.supabase.co"}/rest/v1/${path}`, { headers: HEADERS });
+      const r = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, { headers: HEADERS });
       if (!r.ok) throw new Error(`Supabase HTTP ${r.status}: ${await r.text()}`);
       return r.json();
     }
