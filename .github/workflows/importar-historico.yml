@@ -39,7 +39,7 @@ jobs:
       - name: Importar VRA histórico
         run: python scripts/fetch_historico_anac.py
         env:
-          AIRPORTS:             ${{ vars.AIRPORTS || 'SBCA,SBGR,SBSP,SBCT,SBGL,SBBR,SBFL,SBPA,SBSV,SBFZ' }}
+          AIRPORTS:             ${{ vars.AIRPORTS || 'SBCA,SBCT,SBLO,SBMG,SBFI,SBFL,SBJV,SBNF,SBPA,SBCX,SBGR,SBSP,SBKP,SBRP,SBGL,SBRJ,SBCF,SBUL,SBMK,SBVT,SBBR,SBGO,SBCY,SBCG,SBSV,SBFZ,SBRF,SBSL,SBTE,SBJP,SBMO,SBSE,SBSG,SBEG,SBBE,SBSN,SBMQ,SBBV,SBPV,SBRB,SBPJ' }}
           SUPABASE_URL:         ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           ANO_MES:              ${{ github.event.inputs.ano_mes }}
